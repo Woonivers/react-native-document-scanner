@@ -1,6 +1,8 @@
 package com.documentscanner;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.ContextWrapper;
 
 import com.documentscanner.views.MainView;
 import com.documentscanner.views.OpenNoteCameraView;
@@ -27,11 +29,19 @@ public class DocumentScannerViewManager extends ViewGroupManager<MainView> {
         return REACT_CLASS;
     }
 
+    //unwrapper method for always get Context
+    private static Activity unwrap(Context context) {
+    while (!(context instanceof Activity) && context instanceof ContextWrapper) {
+        context = ((ContextWrapper) context).getBaseContext();
+    }
+
+    return (Activity) context;
+}
+
     @Override
     protected MainView createViewInstance(final ThemedReactContext reactContext) {
-        // OpenNoteCameraView view = new OpenNoteCameraView(reactContext, -1,
-        // reactContext.getCurrentActivity());
-        MainView.createInstance(reactContext, (Activity) reactContext.getBaseContext());
+        //https://stackoverflow.com/questions/51640154/android-view-contextthemewrapper-cannot-be-cast-to-android-app-activity
+        MainView.createInstance(reactContext, unwrap(reactContext));
 
         view = MainView.getInstance();
         view.setOnProcessingListener(new OpenNoteCameraView.OnProcessingListener() {
