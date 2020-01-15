@@ -37,14 +37,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Woonivers/react-native-document-scanner"
+    "url": "git+https://github.com/yusufkinatas/react-native-document-scanner.git"
   },
-  "author": "Woonivers (https://woonivers.com)",
+  "author": "Yusuf Kinatas",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Woonivers/react-native-document-scanner/issues"
-  },
-  "homepage": "https://github.com/Woonivers/react-native-document-scanner#readme",
+  "homepage": "https://github.com/yusufkinatas/react-native-document-scanner#readme",
   "devDependencies": {
     "@babel/runtime": "^7.5.5",
     "@commitlint/config-conventional": "^8.0.0",
@@ -104,5 +101,9 @@
       "<rootDir>/example/node_modules",
       "<rootDir>/lib/"
     ]
+  },
+  "directories": {
+    "example": "example",
+    "lib": "lib"
   }
 }
