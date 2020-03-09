@@ -18,8 +18,8 @@
 
 RCT_EXPORT_MODULE()
 
-RCT_EXPORT_VIEW_PROPERTY(onPictureTaken, RCTBubblingEventBlock)
-RCT_EXPORT_VIEW_PROPERTY(onRectangleDetect, RCTBubblingEventBlock)
+RCT_EXPORT_VIEW_PROPERTY(onPictureTaken, RCTDirectEventBlock)
+RCT_EXPORT_VIEW_PROPERTY(onRectangleDetect, RCTDirectEventBlock)
 
 RCT_EXPORT_VIEW_PROPERTY(overlayColor, UIColor)
 RCT_EXPORT_VIEW_PROPERTY(enableTorch, BOOL)
