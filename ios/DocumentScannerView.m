@@ -28,7 +28,9 @@
     }
 
     if (self.stableCounter > self.detectionCountBeforeCapture &&
-        [NSDate timeIntervalSinceReferenceDate] > self.lastCaptureTime + self.durationBetweenCaptures) {
+        [NSDate timeIntervalSinceReferenceDate] > self.lastCaptureTime + self.durationBetweenCaptures &&
+        !self.manualOnly
+        ) {
         self.lastCaptureTime = [NSDate timeIntervalSinceReferenceDate];
         self.stableCounter = 0;
         [self capture];
