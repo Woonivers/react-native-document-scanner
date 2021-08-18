@@ -135,6 +135,9 @@ public class OpenNoteCameraView extends JavaCameraView implements PictureCallbac
 
     public void setDetectionCountBeforeCapture(int numberOfRectangles) {
         this.numberOfRectangles = numberOfRectangles;
+                if (mImageProcessor != null) {
+            mImageProcessor.setNumOfRectangles(numberOfRectangles);
+        }
     }
 
     public void setDurationBetweenCaptures(double durationBetweenCaptures) {
